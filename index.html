@@ -1,0 +1,542 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bright Path Academy - coaching, guidance and learning for a brighter future.">
+  <title>Bright Path Academy | Learn. Grow. Succeed.</title>
+
+  <style>
+    :root {
+      --navy: #10213b;
+      --blue: #315efb;
+      --light: #f4f7ff;
+      --text: #243047;
+      --muted: #65718a;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--white);
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 3px 20px #10213b0d;
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      color: var(--navy);
+      font-size: 21px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 13px 21px;
+      border-radius: 10px;
+      font-weight: 700;
+      border: 0;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px #315efb35;
+    }
+
+    .btn-outline {
+      color: var(--navy);
+      background: white;
+      border: 1px solid #d9e0f0;
+      margin-left: 8px;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 85% 20%, #dfe7ff 0, transparent 32%),
+        linear-gradient(135deg, #f7f9ff, #edf2ff);
+      padding: 85px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: #e2eaff;
+      color: #244bd0;
+      padding: 7px 13px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      color: var(--navy);
+      font-size: clamp(38px, 5vw, 60px);
+      line-height: 1.12;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+    }
+
+    h1 span {
+      color: var(--blue);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 540px;
+      margin-bottom: 27px;
+    }
+
+    .hero-card {
+      background: white;
+      padding: 30px;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px #172c5018;
+      border: 1px solid #e7ebf5;
+    }
+
+    .hero-icon {
+      width: 65px;
+      height: 65px;
+      border-radius: 18px;
+      background: #e7edff;
+      display: grid;
+      place-items: center;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .hero-card h2 {
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .hero-card p {
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+
+    .mini-feature {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 13px 0;
+      border-bottom: 1px solid #edf0f6;
+    }
+
+    .mini-feature:last-child {
+      border-bottom: 0;
+    }
+
+    .mini-feature strong {
+      color: var(--navy);
+    }
+
+    .mini-feature small {
+      display: block;
+      color: var(--muted);
+    }
+
+    section {
+      padding: 75px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 40px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(28px, 4vw, 39px);
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .course {
+      padding: 28px;
+      border: 1px solid #e6eaf2;
+      border-radius: 18px;
+      background: white;
+      transition: 0.2s;
+    }
+
+    .course:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px #10213b0c;
+    }
+
+    .course-icon {
+      font-size: 31px;
+      margin-bottom: 15px;
+    }
+
+    .course h3 {
+      color: var(--navy);
+      margin-bottom: 9px;
+    }
+
+    .course p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .course a {
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .why {
+      background: var(--light);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .why-item {
+      padding: 20px;
+    }
+
+    .why-item .symbol {
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+
+    .why-item h3 {
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .why-item p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .contact-box {
+      background: var(--navy);
+      border-radius: 24px;
+      padding: 48px 25px;
+      text-align: center;
+      color: white;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(27px, 4vw, 38px);
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      color: #d1dbef;
+      margin-bottom: 25px;
+    }
+
+    .contact-box .btn {
+      background: white;
+      color: var(--navy);
+    }
+
+    footer {
+      background: #0b172a;
+      color: #c8d2e5;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    @media (max-width: 760px) {
+      nav {
+        padding: 15px 0;
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+      }
+
+      .nav-links .btn {
+        padding: 8px 12px;
+      }
+
+      .hero {
+        padding: 55px 0;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .course-grid,
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .btn-outline {
+        margin-left: 0;
+        margin-top: 9px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">Bright<span>Path</span></a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="btn">Contact Us</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">YOUR FUTURE STARTS HERE</span>
+          <h1>Learn Today.<br><span>Lead Tomorrow.</span></h1>
+          <p>
+            Build your confidence, strengthen your concepts and move
+            closer to your academic goals with supportive guidance.
+          </p>
+          <a href="#courses" class="btn">Explore Courses →</a>
+          <a href="#contact" class="btn btn-outline">Enquire Now</a>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-icon">🎓</div>
+          <h2>A better way to learn</h2>
+          <p>Focused learning, clear concepts and guidance for every step.</p>
+
+          <div style="margin-top:20px">
+            <div class="mini-feature">
+              <span>📚</span>
+              <div>
+                <strong>Concept-based learning</strong>
+                <small>Understand the basics clearly</small>
+              </div>
+            </div>
+            <div class="mini-feature">
+              <span>📝</span>
+              <div>
+                <strong>Practice & revision</strong>
+                <small>Build confidence step by step</small>
+              </div>
+            </div>
+            <div class="mini-feature">
+              <span>🤝</span>
+              <div>
+                <strong>Personal guidance</strong>
+                <small>Get help with your learning goals</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses">
+      <div class="container">
+        <div class="section-head">
+          <h2>Explore Our Courses</h2>
+          <p>
+            Learning options designed around students' needs.
+            Contact us to ask about classes and availability.
+          </p>
+        </div>
+
+        <div class="course-grid">
+          <article class="course">
+            <div class="course-icon">📘</div>
+            <h3>School Tuition</h3>
+            <p>Concept support, homework guidance and revision for school students.</p>
+            <a href="#contact">Ask about classes →</a>
+          </article>
+
+          <article class="course">
+            <div class="course-icon">🎯</div>
+            <h3>Competitive Exams</h3>
+            <p>Structured practice and subject-wise preparation guidance.</p>
+            <a href="#contact">Ask about classes →</a>
+          </article>
+
+          <article class="course">
+            <div class="course-icon">💻</div>
+            <h3>Computer Basics</h3>
+            <p>Get familiar with essential computer skills and digital tools.</p>
+            <a href="#contact">Ask about classes →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why" id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>Why Choose Us?</h2>
+          <p>A welcoming learning environment focused on steady progress.</p>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-item">
+            <div class="symbol">🧠</div>
+            <h3>Clear Concepts</h3>
+            <p>Focus on understanding topics instead of only memorising them.</p>
+          </div>
+
+          <div class="why-item">
+            <div class="symbol">📅</div>
+            <h3>Regular Practice</h3>
+            <p>Build a consistent routine with practice and revision.</p>
+          </div>
+
+          <div class="why-item">
+            <div class="symbol">🌱</div>
+            <h3>Steady Growth</h3>
+            <p>Work towards your goals one learning step at a time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <h2>Ready to Get Started?</h2>
+          <p>
+            Ask us about courses, class timings and admissions.
+          </p>
+          <a class="btn" id="whatsappBtn"
+             href="#" target="_blank" rel="noopener">
+            Chat on WhatsApp ↗
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Bright Path Academy</strong></p>
+    <p>Learn. Grow. Succeed.</p>
+    <p style="margin-top:8px">
+      © <span id="year"></span> Bright Path Academy. Demo website.
+    </p>
+  </footer>
+
+  <script>
+    // Replace this with the owner's WhatsApp number:
+    // Country code + 10-digit number, without + or spaces.
+    const whatsappNumber = "91XXXXXXXXXX";
+
+    const message = encodeURIComponent(
+      "Hello! I would like to know more about your courses and classes."
+    );
+
+    document.getElementById("whatsappBtn").href =
+      "https://wa.me/" + whatsappNumber + "?text=" + message;
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
